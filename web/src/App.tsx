@@ -7,7 +7,8 @@ import insta from '../public/insta.png';
 import cpR from '../public/cpR.png';
 
 function App() {
-
+  const {register, handleSubmit} = useForm()
+  
   return (
     <div className="h-screen flex flex-col">
      
@@ -166,3 +167,7 @@ function App() {
 }
 
 export default App
+function useForm(): { register: any; handleSubmit: any; } {
+  throw new Error('Function not implemented.');
+}
+
