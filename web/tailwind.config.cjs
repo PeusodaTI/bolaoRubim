@@ -14,7 +14,8 @@ module.exports = {
     fontSize: {
       mm: '12px',
       sm: '13px',
-      dm: '14px'
+      dm: '14px',
+      lg: '16px',
     },
     extend: {
       backgroundImage: {

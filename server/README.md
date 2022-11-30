@@ -10,9 +10,10 @@
     duplication,
     guess
     
-###Games
+###Confrontos
     id,
-    club
+    clubA,
+    clubB
 
 ###User
     #id,
