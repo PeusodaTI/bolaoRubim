@@ -62,37 +62,37 @@ export function CreateHeader() {
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="javascript:void(0)">Cadastrar Palpite</a>
+                                    <a href="#">Cadastrar Palpite</a>
                                 </li>
                                 <li className="text-zinc-700 hover:text-white 
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="javascript:void(0)">Cadastrar Confronto</a>
+                                    <a href="#">Cadastrar Confronto</a>
                                 </li>
                                 <li className="text-zinc-700 hover:text-white 
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="javascript:void(0)">Validar Palpite</a>
+                                    <a href="#">Validar Palpite</a>
                                 </li>
                                 <li className="text-zinc-700 hover:text-white 
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="javascript:void(0)">Ganhador</a>
+                                    <a href="#">Ganhador</a>
                                 </li>
                                 <li className="text-zinc-700 hover:text-white 
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="javascript:void(0)">Regras</a>
+                                    <a href="#">Regras</a>
                                 </li>
                                 <li className="text-zinc-700 hover:text-white 
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="javascript:void(0)">Resultados</a>
+                                    <a href="#">Resultados</a>
                                 </li>
                             </ul>
                         </div>
