@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import logo from '../../assets/logoT.png';
+import { Link } from 'react-router-dom';
+import logo from '../../../../assets/logoT.png';
 
 
 export function CreateHeader() {
@@ -62,13 +63,19 @@ export function CreateHeader() {
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="#">Cadastrar Palpite</a>
+                                    <Link to="/">Home</Link>
                                 </li>
                                 <li className="text-zinc-700 hover:text-white 
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="#">Cadastrar Confronto</a>
+                                    <Link to="/createClashes">Cadastrar Confronto</Link>
+                                </li>
+                                <li className="text-zinc-700 hover:text-white 
+                                    no-underline hover:underline underline-offset-8 
+                                    decoration-slate-600 decoration-4 text-sm"
+                                >
+                                    <Link to="/createGuesses">Cadastrar Palpite</Link>
                                 </li>
                                 <li className="text-zinc-700 hover:text-white 
                                     no-underline hover:underline underline-offset-8 
@@ -101,9 +108,9 @@ export function CreateHeader() {
             </nav>
 
             <div className="flex flex-col items-center mt-3">
-                <img src={logo} alt="" className="h-14 w-14 left-10"></img>
+                <img src={logo} alt="" className="h-20 w-20 left-10"></img>
                 <h1 className="font-bold mt-1 bg-clip-text text-transparent 
-                    bg-gradient-to-r from-slate-900 via-slate-700 to-slate-800 text-lg"
+                    bg-white text-lg"
                 >
                     Bolão Esportivo Rubim
                 </h1>

@@ -1,7 +1,7 @@
-import zap from '../../assets/zap.png';
-import tel from '../../assets/tel.png';
-import insta from '../../assets/insta.png';
-import cpR from '../../assets/cpR.png';
+import zap from '../../../../assets/zap.png';
+import tel from '../../../../assets/tel.png';
+import insta from '../../../../assets/insta.png';
+import cpR from '../../../../assets/cpR.png';
 
 export function CreateFooter() {
     return(
@@ -13,7 +13,7 @@ export function CreateFooter() {
             </div>
             <div className="flex justify-center items-center space-x-2 mt-4">
                 <img src={cpR} alt="" className="w-3 h-3"></img>
-                <span className="text-white text-mm">2022 PHDevelopment</span>      
+                <span className="ml-1 text-white text-mm">2022 PHDevelopment</span>      
             </div>
         </div>
     )
