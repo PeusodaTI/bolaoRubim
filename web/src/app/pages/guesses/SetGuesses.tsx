@@ -10,7 +10,7 @@ export function SetGuesses(props: SetGuessesProps) {
             <div className="w-1/3 h-auto text-center sm:text-right">
                 
                 <label 
-                    className="text-white text-dm uppercase"
+                    className="text-white text-mm uppercase"
                 >
                     {props.clubA}
                 </label>
@@ -38,7 +38,7 @@ export function SetGuesses(props: SetGuessesProps) {
             
             <div className="w-1/3 h-auto text-center sm:text-left">
                 <label 
-                    className="text-white text-dm uppercase"
+                    className="text-white text-mm uppercase"
                 >
                     {props.clubB}
                 </label>

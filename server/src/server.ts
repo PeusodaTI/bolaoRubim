@@ -20,17 +20,16 @@ const prisma = new PrismaClient({
 app.post('/createClashes', async (request, response) => {
     const body: any = request.body;
     const date = new Date();
-    const round = "2";
-
-   const create = await prisma.clashes.createMany({
+    
+    const create = await prisma.clashes.createMany({
         data: [
-            { clubA: request.body.data.club1, clubB: request.body.data.club2, date, round },
-            { clubA: request.body.data.club3, clubB: request.body.data.club4, date, round },
-            { clubA: request.body.data.club5, clubB: request.body.data.club6, date, round },
-            { clubA: request.body.data.club7, clubB: request.body.data.club8, date, round },
-            { clubA: request.body.data.club9, clubB: request.body.data.club10, date, round },
-            { clubA: request.body.data.club11, clubB: request.body.data.club12, date, round },
-            { clubA: request.body.data.club13, clubB: request.body.data.club14, date, round },
+            { clubA: request.body.data.club1, clubB: request.body.data.club2, date },
+            { clubA: request.body.data.club3, clubB: request.body.data.club4, date },
+            { clubA: request.body.data.club5, clubB: request.body.data.club6, date },
+            { clubA: request.body.data.club7, clubB: request.body.data.club8, date },
+            { clubA: request.body.data.club9, clubB: request.body.data.club10, date },
+            { clubA: request.body.data.club11, clubB: request.body.data.club12, date },
+            { clubA: request.body.data.club13, clubB: request.body.data.club14, date },
         ],
         skipDuplicates: true, 
     }) 
@@ -38,12 +37,15 @@ app.post('/createClashes', async (request, response) => {
     response.status(201).json(create);
 });
 
-app.get('/createGuess', async (request, response) => {
-    
+app.get('/getClashes', async (request, response) => {
+    const clashes = await prisma.clashes.findMany({
+        orderBy: {
+            date: 'desc',
+        },
+        take: 7,
+    })
 
-    const all = await prisma.clashes.findMany()
-
-    return response.json(all)
+    return response.json(clashes)
 })
 
 app.get('/busca', (request, response) => {

@@ -17,7 +17,7 @@ export function CreateGuesses() {
     const [guesses, setGuesses] = useState<Guess[]>([])
 
     useEffect(() => {
-        axios.get('http://localhost:3333/createGuess')
+        axios.get('http://localhost:3333/getClashes')
             .then(response => {
                 setGuesses(response.data)  
                 console.log(guesses)      
