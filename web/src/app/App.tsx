@@ -1,9 +1,12 @@
 import '../styles/main.css';
+import { MyProvider } from './context/MyContext';
 import { CreateRoutes } from './routes';
 
 function App() {
   return (
-    <CreateRoutes />
+    <MyProvider>
+      <CreateRoutes />
+    </MyProvider>
   )
 }
 

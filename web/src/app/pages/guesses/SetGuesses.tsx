@@ -1,12 +1,17 @@
+import { useState, useContext } from "react";
+import { MyContext } from "../../context/MyContext";
+
 interface SetGuessesProps {
+    id: string;
     clubA: string;
     clubB: string;
 }
 
 export function SetGuesses(props: SetGuessesProps) {
+    const {handleGuesses, setResultClubA, setResultClubB} = useContext(MyContext)
+
     return (
-        <div className="flex justify-center mb-2">
-                            
+        <div className="flex justify-center mb-2">           
             <div className="w-1/3 h-auto text-center sm:text-right">
                 
                 <label 
@@ -22,6 +27,9 @@ export function SetGuesses(props: SetGuessesProps) {
                     className="sm:text-right text-sm text-center 
                         backdrop-blur-sm w-8 rounded bg-transparent 
                         border border-white text-white"
+                    id="clubA"
+                    name="clubA"
+                    onChange={e => setResultClubA(parseInt(e.target.value))}
                     />
                 <label 
                     className="text-white text-sm"
@@ -33,6 +41,10 @@ export function SetGuesses(props: SetGuessesProps) {
                     className="sm:text-right text-sm text-center 
                         backdrop-blur-sm w-8 rounded bg-transparent 
                         border border-white text-white"
+                    id="clubB"
+                    name="clubB"
+                    onChange={e => setResultClubB(parseInt(e.target.value))}
+                    onBlur={() => handleGuesses(props.id)}
                 />
             </div>
             
