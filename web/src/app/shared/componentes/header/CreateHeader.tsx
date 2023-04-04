@@ -81,7 +81,19 @@ export function CreateHeader() {
                                     no-underline hover:underline underline-offset-8 
                                     decoration-slate-600 decoration-4 text-sm"
                                 >
-                                    <a href="#">Validar Palpite</a>
+                                    <Link to="/validateGuesses">Validar Palpite</Link>
+                                </li>
+                                <li className="text-zinc-700 hover:text-white 
+                                    no-underline hover:underline underline-offset-8 
+                                    decoration-slate-600 decoration-4 text-sm"
+                                >
+                                    <a href="#">Resultados</a>
+                                </li>
+                                <li className="text-zinc-700 hover:text-white 
+                                    no-underline hover:underline underline-offset-8 
+                                    decoration-slate-600 decoration-4 text-sm"
+                                >
+                                    <a href="#">Listagem Palpites</a>
                                 </li>
                                 <li className="text-zinc-700 hover:text-white 
                                     no-underline hover:underline underline-offset-8 
@@ -95,12 +107,6 @@ export function CreateHeader() {
                                 >
                                     <a href="#">Regras</a>
                                 </li>
-                                <li className="text-zinc-700 hover:text-white 
-                                    no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
-                                >
-                                    <a href="#">Resultados</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -112,7 +118,7 @@ export function CreateHeader() {
                 <h1 className="font-bold mt-1 bg-clip-text text-transparent 
                     bg-white text-lg"
                 >
-                    Bolão Esportivo Rubim
+                    BetBim
                 </h1>
             </div>
         </div>

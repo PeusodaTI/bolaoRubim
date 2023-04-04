@@ -13,9 +13,9 @@ interface GuessesProps {
     clubB: number;
 }
 
-export const MyContext = createContext<SetGuessesProps>({} as SetGuessesProps);
+export const GuessesContext = createContext<SetGuessesProps>({} as SetGuessesProps);
 
-export function MyProvider({children}) {
+export function GuessesProvider({children}) {
     const [guess, setGuess] = useState<GuessesProps[]>([])
     const [resultClubA, setResultClubA] = useState<number>(0)
     const [resultClubB, setResultClubB] = useState<number>(0)
@@ -30,11 +30,11 @@ export function MyProvider({children}) {
     }
 
     return(
-        <MyContext.Provider 
+        <GuessesContext.Provider 
             value={{handleGuesses, setResultClubA, setResultClubB, guess}}
         >
             {children}
-        </MyContext.Provider>
+        </GuessesContext.Provider>
     );
 }
 

@@ -20,18 +20,20 @@ model Clashes {
 }
 
 model Players {
-  id          String @id @default(uuid())
+  id          String   @id @default(uuid())
   name        String
   phoneNumber String
+  date        DateTime @db.Date
 
   guesses Guesses[]
 }
 
 model Guesses {
-  id          String  @id @default(uuid())
+  id          String   @id @default(uuid())
   resultClubA Int
   resultClubB Int
   validation  Boolean
+  date        DateTime @db.Date
 
   Clashes   Clashes? @relation(fields: [clashesId], references: [id])
   clashesId String?

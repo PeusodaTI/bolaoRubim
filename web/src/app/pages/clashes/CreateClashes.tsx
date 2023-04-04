@@ -14,24 +14,7 @@ export function CreateClashes() {
         console.log(data)
     
         try {
-            axios.post('http://localhost:3333/createClashes', {
-                data: {
-                    club1: data.club1,
-                    club2: data.club2,
-                    club3: data.club3,
-                    club4: data.club4,
-                    club5: data.club5,
-                    club6: data.club6,
-                    club7: data.club7,
-                    club8: data.club8,
-                    club9: data.club9,
-                    club10: data.club10,
-                    club11: data.club11,
-                    club12: data.club12,
-                    club13: data.club13,
-                    club14: data.club14,
-                }
-            })
+            axios.post('http://localhost:3333/createClashes', {data})
         
             alert("Confrontros cadastrados com sucesso!")
         } catch(error) {

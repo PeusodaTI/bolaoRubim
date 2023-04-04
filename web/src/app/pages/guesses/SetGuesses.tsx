@@ -1,5 +1,5 @@
-import { useState, useContext } from "react";
-import { MyContext } from "../../context/MyContext";
+import { useContext } from "react";
+import { GuessesContext } from "../../context/GuessesContext";
 
 interface SetGuessesProps {
     id: string;
@@ -8,7 +8,7 @@ interface SetGuessesProps {
 }
 
 export function SetGuesses(props: SetGuessesProps) {
-    const {handleGuesses, setResultClubA, setResultClubB} = useContext(MyContext)
+    const {handleGuesses, setResultClubA, setResultClubB} = useContext(GuessesContext)
 
     return (
         <div className="flex justify-center mb-2">           
@@ -29,6 +29,7 @@ export function SetGuesses(props: SetGuessesProps) {
                         border border-white text-white"
                     id="clubA"
                     name="clubA"
+                    required
                     onChange={e => setResultClubA(parseInt(e.target.value))}
                     />
                 <label 
@@ -43,6 +44,7 @@ export function SetGuesses(props: SetGuessesProps) {
                         border border-white text-white"
                     id="clubB"
                     name="clubB"
+                    required
                     onChange={e => setResultClubB(parseInt(e.target.value))}
                     onBlur={() => handleGuesses(props.id)}
                 />
