@@ -1,13 +1,15 @@
 import express, { request } from 'express'
 import cors from 'cors';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 
 //Aplication
 const app = express()
 
 app.use(express.json())
 
-app.use(cors())
+app.use(cors({
+    
+}))
 
 //DB
 const prisma = new PrismaClient({
@@ -60,6 +62,7 @@ app.post('/createGuesses', async (request, response) => {
     const body: any = request.body;
     let validate = false
     const date = new Date();
+    date.setHours(0, 0, 0 ,0)
     
     if(request.body.validate == 'on') {
         validate = true
@@ -70,6 +73,7 @@ app.post('/createGuesses', async (request, response) => {
             data: {
                 name: request.body.name,
                 phoneNumber: request.body.phoneNumber,
+                validation: validate,
                 date: date,
             }
         })
@@ -79,7 +83,6 @@ app.post('/createGuesses', async (request, response) => {
                 data: {
                     resultClubA: guess.clubA,
                     resultClubB: guess.clubB,
-                    validation: validate,
                     clashesId: guess.id,
                     playersId: user.id,
                     date: date,
@@ -93,12 +96,24 @@ app.post('/createGuesses', async (request, response) => {
     }
 })
 
-app.get('/getGuesses', async(request, response) => {
+app.get('/getPlayers', async(request, response) => {
+    const now = new Date()
+    now.setUTCHours(0, 0, 0 ,0)
+  
+    const filter: Prisma.GuessesWhereInput = {
+      date: {
+        gte: now,
+        lt: new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1),
+      },
+    };
 
-    const players = await prisma.guesses.findMany({
-        include: {
-                Players: true,
-        }
+    console.log(filter)
+
+    const players = await prisma.players.findMany({
+/*        include: {
+            Guesses: true,
+        },*/
+        where: filter,
     })
 
     console.log(players)
@@ -106,5 +121,25 @@ app.get('/getGuesses', async(request, response) => {
     return response.json(players)
 })
 
+app.get('/getGuess/:id', async(request, response) => {
+    const id = request.params.id
+
+    const guess = await prisma.guesses.findMany({
+        include: {
+            Clashes: true,
+        },
+        where: {
+            playersId: id
+        }
+    })
+
+    console.log(guess)
+
+    return response.json(guess)
+})
+
+app.get('/routing', (request, response) => {
+    response.send("Hello Docker!!!")
+})
 app.listen(3333)
 

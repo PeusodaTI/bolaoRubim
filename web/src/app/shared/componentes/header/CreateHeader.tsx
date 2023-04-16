@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../../assets/logoT.png';
+import logo from '../../../../assets/logo.png';
 
 
 export function CreateHeader() {
     const [navbar, setNavbar] = useState(false);
 
     return(
-        <div className="w-auto h-auto p-4">
+        <div className="w-auto h-auto  pb-0">
             
-            <nav className="w-full bg-transparent">
+            <nav className="w-full bg-teal-700 fixed z-50 py-2 px-2">
                 <div className="justify-center px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -59,51 +59,51 @@ export function CreateHeader() {
                             }`}
                         >
                             <ul className="items-center justify-center space-y-2 md:flex md:space-x-10 md:space-y-0">
-                                <li className="text-zinc-700 hover:text-white 
+                                <li className="text-white hover:text-white 
                                     no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
+                                    decoration-gray-700 decoration-4 text-dm"
                                 >
                                     <Link to="/">Home</Link>
                                 </li>
-                                <li className="text-zinc-700 hover:text-white 
+                                <li className="text-white hover:text-white 
                                     no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
+                                    decoration-gray-700 decoration-4 text-dm"
                                 >
                                     <Link to="/createClashes">Cadastrar Confronto</Link>
                                 </li>
-                                <li className="text-zinc-700 hover:text-white 
+                                <li className="text-white hover:text-white 
                                     no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
+                                    decoration-gray-700 decoration-4 text-dm"
                                 >
                                     <Link to="/createGuesses">Cadastrar Palpite</Link>
                                 </li>
-                                <li className="text-zinc-700 hover:text-white 
+                                <li className="text-white hover:text-white 
                                     no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
+                                    decoration-gray-700 decoration-4 text-dm"
                                 >
                                     <Link to="/validateGuesses">Validar Palpite</Link>
                                 </li>
-                                <li className="text-zinc-700 hover:text-white 
+                                <li className="text-white hover:text-white 
                                     no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
+                                    decoration-gray-700 decoration-4 text-dm"
                                 >
                                     <a href="#">Resultados</a>
                                 </li>
-                                <li className="text-zinc-700 hover:text-white 
+                                <li className="text-white hover:text-white 
                                     no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
+                                    decoration-gray-700 decoration-4 text-dm"
                                 >
                                     <a href="#">Listagem Palpites</a>
                                 </li>
-                                <li className="text-zinc-700 hover:text-white 
+                                <li className="text-white hover:text-white 
                                     no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
+                                    decoration-gray-700 decoration-4 text-dm"
                                 >
                                     <a href="#">Ganhador</a>
                                 </li>
-                                <li className="text-zinc-700 hover:text-white 
+                                <li className="text-white hover:text-white 
                                     no-underline hover:underline underline-offset-8 
-                                    decoration-slate-600 decoration-4 text-sm"
+                                    decoration-gray-700 decoration-4 text-dm"
                                 >
                                     <a href="#">Regras</a>
                                 </li>
@@ -113,13 +113,8 @@ export function CreateHeader() {
                 </div>
             </nav>
 
-            <div className="flex flex-col items-center mt-3">
-                <img src={logo} alt="" className="h-20 w-20 left-10"></img>
-                <h1 className="font-bold mt-1 bg-clip-text text-transparent 
-                    bg-white text-lg"
-                >
-                    BetBim
-                </h1>
+            <div className="flex flex-col items-center mt-20 sm:mt-20 md:mt-20 lg:mt-20">
+                <img src={logo} alt="" className="h-40 w-40 left-10"></img>
             </div>
         </div>
     
