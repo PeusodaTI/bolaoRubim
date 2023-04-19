@@ -30,19 +30,3 @@ export function Home() {
         </div>
     );
 }
-/*
-
-.modal-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  z-index: 10000;
-  padding: 20px;
-}
-Você pode adicionar essas classes ao seu código e envolver o seu modal com elas:
-
-
-
-*/

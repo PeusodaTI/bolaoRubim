@@ -127,6 +127,7 @@ app.get('/getGuess/:id', async(request, response) => {
     const guess = await prisma.guesses.findMany({
         include: {
             Clashes: true,
+            Players: true,
         },
         where: {
             playersId: id

@@ -12,7 +12,7 @@ export function SetGuesses(props: SetGuessesProps) {
 
     return (
         <div className="flex justify-center mb-2">           
-            <div className="w-1/3 h-auto text-center sm:text-right">
+            <div className="w-1/3 h-auto text-right sm:text-right">
                 
                 <label 
                     className="text-white text-mm uppercase"
@@ -50,7 +50,7 @@ export function SetGuesses(props: SetGuessesProps) {
                 />
             </div>
             
-            <div className="w-1/3 h-auto text-center sm:text-left">
+            <div className="w-1/3 h-auto text-left sm:text-left">
                 <label 
                     className="text-white text-mm uppercase"
                 >
